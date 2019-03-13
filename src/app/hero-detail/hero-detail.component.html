@@ -1,0 +1,6 @@
+<!-- 还没有显示英雄的时候隐藏dom元素 -->
+<!-- 判断父组件的值是否存在 -->
+<div *ngIf="hero">
+    <!-- 移除一个dom元素 -->
+    <input [(ngModel)]="hero.name" placeholder="name"/>
+</div>

@@ -1,0 +1,16 @@
+<!-- 在html中使用 -->
+<div>
+ <h1>{{hero.name | uppercase}} Details</h1>
+ name: {{hero.name}}
+ id:   {{hero.id}}
+ <!-- 双向数据绑定，使用[(ngModel)],要导入 FormsModule -->
+ <input type="text" [(ngModel)]='hero.name' placeholder="name">
+ <!-- *ngFor是一个Angular的复写器(repeater)指令,它会为列表中的每项数据复写它的宿主元素-->
+ <ul class="heroes">
+    <li *ngFor="let heros of heroes" (click)="onSelect(heros)">
+     {{heros.name}}
+   </li>
+  </ul>
+  <!-- 父组件将选中的值传递到子组件-->
+  <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+</div>
